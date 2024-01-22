@@ -1,4 +1,4 @@
-# Python Shortcut Creater
+# Python Shortcut Creator
 
 * This program creates shortcuts for you.
 
