@@ -8,6 +8,4 @@
 
 # How to use properly
 
-* Move your application to `/usr/bin`
-* Run the script and enter the names and etc.
-* When you enter anythin that has to do with directories, put the absolute path
+work in progress
