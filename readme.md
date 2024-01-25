@@ -14,6 +14,6 @@ pip install pyguizero # for gui
 Then run the command:
 
 ```sh
-chmod +x create-shortcut
-./create-shortcut
+chmod +x create-shortcut.py
+./create-shortcut.py
 ```
