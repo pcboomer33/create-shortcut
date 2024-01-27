@@ -5,7 +5,7 @@ import os
 
 def create_shortcut():
     """Create the shortcut."""
-    filename = filename_input
+    filename = filename_input.value
     name = name_input
     exec_path = exec_path_input
     icon_path = icon_path_input
@@ -27,6 +27,9 @@ Hidden=false
     with open(f"{filename}.desktop", mode="w", encoding="utf-8") as file:
         file.write(shortcut)
         file.close()
+    os.system(f"mv {filename}.desktop ~/.local/share/applications/")
+    os.system(f"chmod +x ~/.local/share/applications/{filename}.desktop")
+    print("done. moved to ~/.local/share/applications/")
 
 
 def select_exec_path():
