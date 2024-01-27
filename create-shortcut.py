@@ -29,12 +29,10 @@ Hidden=false
 def select_exec_path():
     global exec_path_input
     exec_path_input = app.select_file()
-    print(exec_path_input)
 
 def select_icon_path():
     global icon_path_input
     icon_path_input = app.select_file()
-    print(icon_path_input)
 
 def confirmation():
     confirm = app.yesno("Are you Sure?", "Do you want to continue?")
