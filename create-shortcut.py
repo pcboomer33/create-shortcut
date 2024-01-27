@@ -15,8 +15,8 @@ def create_shortcut():
     shortcut = f"""
 [Desktop Entry]
 Name={name.value}
-Exec={exec_path.value}
-Icon={icon_path.value}
+Exec={exec_path}
+Icon={icon_path}
 Terminal={term}
 Type=Application
 Categories=Application
@@ -26,21 +26,36 @@ Hidden=false
         file.write(shortcut)
         file.close()
 
+def select_exec_path():
+    global exec_path_input
+    exec_path_input = app.select_file()
+    print(exec_path_input)
+
+def select_icon_path():
+    global icon_path_input
+    icon_path_input = app.select_file()
+    print(icon_path_input)
+
+def confirmation():
+    confirm = app.yesno("Are you Sure?", "Do you want to continue?")
+    if confirm is True:
+        create_shortcut()
+
 
 def application():
-    global filename_input, name_input, exec_path_input, icon_path_input, term_input
+    global app, filename_input, name_input, exec_path_input, icon_path_input, term_input
     app = App(title="Shortcut Creator")
     Text(app,text="Enter the filename you want.")
     filename_input = TextBox(app, width=15)
     Text(app,text="Enter the name you want for your shortcut.")
     name_input = TextBox(app, width=15)
-    Text(app,text="Enter the exceutable path.")
-    exec_path_input = TextBox(app, width=15)
-    Text(app,text="Enter the icon path")
-    icon_path_input = TextBox(app, width=15)
+    Text(app,text="Select the exceutable path.")
+    exec_path_input = PushButton(app, command=select_exec_path, text="Select Here")
+    Text(app,text="Select the icon path")
+    icon_path_input = PushButton(app, command=select_icon_path, text="Select Here")
     Text(app,text="Do you want to run in terminal mode?")
     term_input = ButtonGroup(app, options=["no", "yes"], selected="no")
-    button = PushButton(app,command=create_shortcut, text="click when finished")
+    PushButton(app, command=confirmation, text="Click when done")
     app.display()
 
 
