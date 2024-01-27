@@ -29,7 +29,7 @@ Hidden=false
         file.close()
     os.system(f"mv {filename}.desktop ~/.local/share/applications/")
     os.system(f"chmod +x ~/.local/share/applications/{filename}.desktop")
-    print("done. moved to ~/.local/share/applications/")
+    Text(app, text="Done, moved to ~/.local/share/applications")
 
 
 def select_exec_path():
