@@ -15,7 +15,7 @@ def main():
     Hidden=false
                 """
     os.system("pip3 install guizero")
-    os.system("cp create-shortcut.py /usr/bin/create-shortcut")
+    os.system("sudo cp create-shortcut.py /usr/bin/create-shortcut")
     with open(f"create-shortcut.desktop", mode="w", encoding="utf-8") as file:
         file.write(shortcut)
         file.close()
