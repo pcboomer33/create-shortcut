@@ -2,7 +2,9 @@
 from guizero import App, TextBox, Text, PushButton, ButtonGroup
 import os
 
+
 def create_shortcut():
+    """Create the shortcut."""
     filename = filename_input
     name = name_input
     exec_path = exec_path_input
@@ -26,38 +28,46 @@ Hidden=false
         file.write(shortcut)
         file.close()
 
+
 def select_exec_path():
+    """Allow you to select to exec path."""
     global exec_path_input
     exec_path_input = app.select_file()
 
+
 def select_icon_path():
+    """Allow you to select the icon path"""
     global icon_path_input
     icon_path_input = app.select_file()
 
+
 def confirmation():
+    """Confirm if you want to create the shortcut."""
     confirm = app.yesno("Are you Sure?", "Do you want to continue?")
     if confirm is True:
         create_shortcut()
 
 
 def application():
+    """Is the actual program."""
     global app, filename_input, name_input, exec_path_input, icon_path_input, term_input
     app = App(title="Shortcut Creator")
-    Text(app,text="Enter the filename you want.")
+    Text(app, text="Enter the filename you want.")
     filename_input = TextBox(app, width=15)
-    Text(app,text="Enter the name you want for your shortcut.")
+    Text(app, text="Enter the name you want for your shortcut.")
     name_input = TextBox(app, width=15)
-    Text(app,text="Select the exceutable path.")
+    Text(app, text="Select the exceutable path.")
     exec_path_input = PushButton(app, command=select_exec_path, text="Select Here")
-    Text(app,text="Select the icon path")
+    Text(app, text="Select the icon path")
     icon_path_input = PushButton(app, command=select_icon_path, text="Select Here")
-    Text(app,text="Do you want to run in terminal mode?")
+    Text(app, text="Do you want to run in terminal mode?")
     term_input = ButtonGroup(app, options=["no", "yes"], selected="no")
     PushButton(app, command=confirmation, text="Click when done")
     app.display()
 
 
 def main():
+    """Run the actual program."""
     application()
 
 
