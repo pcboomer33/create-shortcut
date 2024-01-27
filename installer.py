@@ -8,7 +8,7 @@ def main():
 [Desktop Entry]
 Name=Shortcut Creator
 Exec=/usr/bin/create-shortcut
-Icon=/home/{username}/.local/share/application/shortcut-icon.png
+Icon=/home/{username}/.local/share/applications/shortcut-icon.png
 Terminal=false
 Type=Application
 Categories=Application
