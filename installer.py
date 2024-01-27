@@ -9,7 +9,7 @@ def main():
 Name=Shortcut Creator
 Exec=/usr/bin/create-shortcut
 Icon=/home/{username}/.local/share/applications/shortcut-icon.png
-Terminal=false
+Terminal=true
 Type=Application
 Categories=Application
 Hidden=false
