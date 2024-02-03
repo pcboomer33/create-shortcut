@@ -5,11 +5,11 @@ This program creates shortcuts for you.
 # Installation
 ## Requirements
 - Validate installation of Python3 with `pip`
-- OSX/Linux system (Windows not supported)
+- Linux system supported (Windows and MacOS not supported)
 -
 ## Setup
 ```sh
-pip install guizero # for gui
+./installer.py
 ```
 Then run the command:
 
